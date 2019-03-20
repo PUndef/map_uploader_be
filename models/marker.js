@@ -11,10 +11,10 @@ const MarkerSchema = new Schema({
     city: String,
     street: String,
     apartment: String,
-    floors: Number,
+    floors: String,
     latitude: String,
     longitude: String,
-    countApartments: Number,
+    countApartments: String,
 });
 
 module.exports = mongoose.model('Marker', MarkerSchema);

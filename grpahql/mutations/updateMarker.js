@@ -1,6 +1,5 @@
 const {
-    GraphQLInt,
-    GraphQLString
+    GraphQLString,
 } = require('graphql');
 const markerGraphQLType = require('../types/markerType');
 const Marker = require('./../../models/marker');
@@ -24,7 +23,7 @@ module.exports = {
             type: GraphQLString,
         },
         floors: {
-            type: GraphQLInt,
+            type: GraphQLString,
         },
         latitude: {
             type: GraphQLString,
@@ -33,20 +32,20 @@ module.exports = {
             type: GraphQLString,
         },
         countApartments: {
-            type: GraphQLInt,
+            type: GraphQLString,
         },
     },
     resolve(parent, args) {
         return Marker.findById(args.id)
-            .then(gadget => {
-                gadget.address = args.address;
-                gadget.city = args.city;
-                gadget.street = args.street;
-                gadget.apartment = args.apartment;
-                gadget.floors = args.floors;
-                gadget.latitude = args.latitude;
-                gadget.longitude = args.longitude;
-                gadget.countApartments = args.countApartments;
+            .then(marker => {
+                marker.address = args.address;
+                marker.city = args.city;
+                marker.street = args.street;
+                marker.apartment = args.apartment;
+                marker.floors = args.floors;
+                marker.latitude = args.latitude;
+                marker.longitude = args.longitude;
+                marker.countApartments = args.countApartments;
                 return marker.save();
             })
             .then(updatedMarker => updatedMarker)

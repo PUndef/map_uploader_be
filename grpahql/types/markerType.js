@@ -3,7 +3,6 @@ const graphql = require('graphql');
 const {
     GraphQLObjectType,
     GraphQLString,
-    GraphQLInt,
 } = graphql;
 
 const MarkerType = new GraphQLObjectType({
@@ -25,7 +24,7 @@ const MarkerType = new GraphQLObjectType({
             type: GraphQLString,
         },
         floors: {
-            type: GraphQLInt,
+            type: GraphQLString,
         },
         latitude: {
             type: GraphQLString,
@@ -34,7 +33,7 @@ const MarkerType = new GraphQLObjectType({
             type: GraphQLString,
         },
         countApartments: {
-            type: GraphQLInt,
+            type: GraphQLString,
         },
     })
 });
